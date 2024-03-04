@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
+
 import { LayoutModule } from '@ecommerce-angular-pro/layout';
 import { NxWelcomeComponent } from './nx-welcome.component';
 
