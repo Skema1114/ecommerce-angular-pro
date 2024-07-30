@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { RouterModule } from '@angular/router';
-
 import { LayoutModule } from '@ecommerce-angular-pro/layout';
 import { ProductSearchComponent } from '@ecommerce-angular-pro/product-search';
 import { NxWelcomeComponent } from './nx-welcome.component';
@@ -12,6 +12,7 @@ import { NxWelcomeComponent } from './nx-welcome.component';
     RouterModule,
     LayoutModule,
     ProductSearchComponent,
+    MatSnackBarModule,
   ],
   selector: 'ecommerce-angular-pro-root',
   templateUrl: './app.component.html',
