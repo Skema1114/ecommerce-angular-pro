@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 import { HeaderComponent } from './header.component';
 
 const mockTitle = 'Mock Title';
@@ -9,6 +10,7 @@ describe('HeaderComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [RouterTestingModule],
       declarations: [HeaderComponent],
     }).compileComponents();
 
@@ -32,5 +34,10 @@ describe('HeaderComponent', () => {
     fixture.detectChanges();
 
     expect(header.textContent).toBe(anotherMock);
+  });
+
+  it('should redirect to "/" when title is clicked', () => {
+    const anchor: HTMLAnchorElement = fixture.nativeElement.querySelector('a');
+    expect(anchor.getAttribute('href')).toBe('/');
   });
 });
