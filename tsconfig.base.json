@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@ecommerce-angular-pro/home": ["modules/feature/home/src/index.ts"],
       "@ecommerce-angular-pro/layout": ["modules/feature/layout/src/index.ts"],
       "@ecommerce-angular-pro/product-data-access": [
         "modules/data-access/product/src/index.ts"
