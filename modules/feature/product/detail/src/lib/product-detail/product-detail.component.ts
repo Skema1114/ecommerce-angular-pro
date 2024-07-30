@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, computed, effect, inject, signal } from '@angular/core';
 import { toObservable, toSignal } from '@angular/core/rxjs-interop';
 import {
+  CartService,
   Product,
   ProductSearchService,
 } from '@ecommerce-angular-pro/product-data-access';
@@ -25,6 +26,7 @@ export class ProductDetailComponent {
   );
 
   productSignal = toSignal(this.product$);
+  cartService = inject(CartService);
 
   // count = signal(0);
   cart = signal<Product[]>([]);
