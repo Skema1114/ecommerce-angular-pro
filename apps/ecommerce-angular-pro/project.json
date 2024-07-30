@@ -1,0 +1,93 @@
+{
+  "name": "ecommerce-angular-pro",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "prefix": "ecommerce-angular-pro",
+  "sourceRoot": "apps/ecommerce-angular-pro/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:application",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/ecommerce-angular-pro",
+        "index": "apps/ecommerce-angular-pro/src/index.html",
+        "browser": "apps/ecommerce-angular-pro/src/main.ts",
+        "polyfills": ["zone.js"],
+        "tsConfig": "apps/ecommerce-angular-pro/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          "apps/ecommerce-angular-pro/src/favicon.ico",
+          "apps/ecommerce-angular-pro/src/assets"
+        ],
+        "styles": [
+          "@angular/material/prebuilt-themes/deeppurple-amber.css",
+          "apps/ecommerce-angular-pro/src/styles.scss"
+        ],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "optimization": false,
+          "extractLicenses": false,
+          "sourceMap": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "buildTarget": "ecommerce-angular-pro:build:production"
+        },
+        "development": {
+          "buildTarget": "ecommerce-angular-pro:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "buildTarget": "ecommerce-angular-pro:build"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/ecommerce-angular-pro/src"]
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectName}"],
+      "options": {
+        "jestConfig": "apps/ecommerce-angular-pro/jest.config.app.ts"
+      }
+    },
+    "serve-static": {
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "ecommerce-angular-pro:build",
+        "staticFilePath": "dist/ecommerce-angular-pro/browser"
+      }
+    }
+  }
+}
