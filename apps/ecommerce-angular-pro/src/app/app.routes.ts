@@ -23,4 +23,9 @@ export const appRoutes: Route[] = [
     loadChildren: () =>
       import('@ecommerce-angular-pro/auth-form').then((c) => c.authFormRoutes),
   },
+  {
+    path: 'users',
+    loadChildren: () =>
+      import('@ecommerce-angular-pro/auth-form').then((c) => c.authFormRoutes),
+  },
 ];
