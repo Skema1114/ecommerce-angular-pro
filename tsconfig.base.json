@@ -36,6 +36,9 @@
       ],
       "@ecommerce-angular-pro/product-ui": [
         "libs/modules/ui/product/src/index.ts"
+      ],
+      "@ecommerce-angular-pro/users": [
+        "libs/modules/data-access/users/src/index.ts"
       ]
     }
   },
