@@ -8,6 +8,7 @@ import {
   CartService,
   Product,
 } from '@ecommerce-angular-pro/product-data-access';
+import { ProductCardItemComponent } from '@ecommerce-angular-pro/product-ui';
 
 @Component({
   selector: 'ecommerce-angular-pro-product-cart',
@@ -19,6 +20,7 @@ import {
     MatListModule,
     MatChipsModule,
     MatIconModule,
+    ProductCardItemComponent,
   ],
   templateUrl: './product-cart.component.html',
   styleUrl: './product-cart.component.scss',
