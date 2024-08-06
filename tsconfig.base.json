@@ -51,8 +51,7 @@
       ],
       "@ecommerce-admin/users-details": [
         "libs/modules/feature/users/detail/src/index.ts"
-      ],
-      "@ecommerce-admin/general-routes": ["apps/ecommerce-admin/src/index.ts"]
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]
