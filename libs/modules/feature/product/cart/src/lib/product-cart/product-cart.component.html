@@ -1,0 +1,19 @@
+<mat-card class="cart">
+  <mat-card-title style="color: white">Carrinho de Compras</mat-card-title>
+  <mat-card-content>
+    <div class="cart__grid">
+      <div class="cart__item" *ngFor="let item of cart()">
+        <img
+          src="{{ item.image }}"
+          alt="{{ item.name }}"
+          class="cart__item-image"
+        />
+        <div class="cart__item-details">
+          <h3 class="cart__item-name">{{ item.name }}</h3>
+          <p class="cart__item-price">Preço: {{ item.price | currency }}</p>
+          <p class="cart__item-description">{{ item.description }}</p>
+        </div>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
