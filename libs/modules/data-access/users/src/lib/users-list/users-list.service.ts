@@ -7,7 +7,7 @@ import { User } from '../models/users.model';
   providedIn: 'root',
 })
 export class UsersListService {
-  readonly apiUrl = 'https://65009f9718c34dee0cd53786.mockapi.io/users';
+  readonly apiUrl = 'https://65009f9718c34dee0cd53786.mockapi.io';
 
   private http = inject(HttpClient);
 
