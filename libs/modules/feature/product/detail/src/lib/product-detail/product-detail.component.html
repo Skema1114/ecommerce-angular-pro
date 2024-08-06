@@ -1,26 +1,37 @@
 <main class="product-detail">
-  <section class="product-detail__section">
+  <section class="product-detail__container">
     <ng-container *ngIf="productSignal() as product">
-      <ecommerce-angular-pro-product-card
-        [product]="product"
-      ></ecommerce-angular-pro-product-card>
+      <div class="product-detail__image">
+        <img [src]="product.image" [alt]="product.description" />
+      </div>
       <div class="product-detail__info">
-        <h2>{{ product.description }}</h2>
-        <p>{{ product.quantity | quantityDescription }}</p>
-        <!-- <button mat-raised-button color="primary" (click)="addToCart(product)">
-          Adicionar ao carrinho
-        </button>
-        <pre>
-          Quantidade: {{ quantityObservable$ | async }}
-          {{ cart() | json }}
-        </pre> -->
-        <button
-          mat-raised-button
-          color="primary"
-          (click)="cartService.addToCart(product)"
-        >
-          Adicionar ao carrinho
-        </button>
+        <h1 class="product-detail__title">{{ product.name }}</h1>
+        <p class="product-detail__description">{{ product.description }}</p>
+        <p class="product-detail__price">
+          {{ product.price | currency : 'BRL' }}
+        </p>
+        <p class="product-detail__quantity">
+          {{ product.quantity | quantityDescription }}
+        </p>
+        <div class="product-detail__actions">
+          <button
+            mat-raised-button
+            color="accent"
+            [routerLink]="['/']"
+            routerLinkActive="router-link-active"
+            class="product-detail__button"
+          >
+            Voltar
+          </button>
+          <button
+            mat-raised-button
+            color="primary"
+            (click)="cartService.addToCart(product)"
+            class="product-detail__button"
+          >
+            Adicionar ao carrinho
+          </button>
+        </div>
       </div>
     </ng-container>
   </section>
