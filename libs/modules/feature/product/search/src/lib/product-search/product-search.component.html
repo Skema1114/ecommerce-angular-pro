@@ -1,6 +1,5 @@
-<form class="example-form">
-  <mat-form-field class="example-full-width">
-    <mat-label>Buscar prdutos</mat-label>
+<form class="search-form">
+  <mat-form-field class="full-width">
     <input
       type="text"
       placeholder="Buscar produtos"
@@ -11,11 +10,13 @@
     />
     <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
       @for (product of products$ | async; track product.id) {
+
       <mat-option
-        [routerLink]="['product', product.id]"
+        [routerLink]="['/product', product.id]"
         [value]="product.name"
-        >{{ product.name }}</mat-option
       >
+        {{ product.name }}
+      </mat-option>
       }
     </mat-autocomplete>
   </mat-form-field>

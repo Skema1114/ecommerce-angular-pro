@@ -1,11 +1,14 @@
-<ecommerce-angular-pro-header title="Ecommerce">
+<mat-toolbar color="primary">
+  <span class="title">Ecommerce</span>
+
   <ecommerce-angular-pro-product-search></ecommerce-angular-pro-product-search>
 
-  <div right class="right-content">
-    <a class="login" routerLink="/auth">Login</a>
+  <div class="right-content">
+    <a mat-button routerLink="/admin"> <mat-icon>people</mat-icon> Usuários </a>
+    <a mat-button routerLink="/auth"> <mat-icon>login</mat-icon> Login </a>
     <ecommerce-angular-pro-cart
       [quantity]="quantity()"
     ></ecommerce-angular-pro-cart>
   </div>
-</ecommerce-angular-pro-header>
+</mat-toolbar>
 <router-outlet></router-outlet>

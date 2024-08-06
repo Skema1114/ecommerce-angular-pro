@@ -1,0 +1,37 @@
+<main class="dark-theme" style="padding: 20px">
+  <ng-container *ngIf="users$ | async as users">
+    <div class="user-list">
+      <mat-card
+        *ngFor="let user of users"
+        class="user-card mat-elevation-z4 dark-card"
+      >
+        <mat-card-header class="user-card__header">
+          <div class="user-card__avatar">
+            <img [src]="user.avatar" alt="imagem do usuário" />
+          </div>
+          <div>
+            <mat-card-title class="user-card__title">{{
+              user.name
+            }}</mat-card-title>
+            <mat-card-subtitle class="user-card__subtitle">{{
+              user.email
+            }}</mat-card-subtitle>
+          </div>
+        </mat-card-header>
+        <mat-card-content class="user-card__content">
+          <p>{{ user.biography }}</p>
+        </mat-card-content>
+        <mat-card-actions class="user-card__actions">
+          <button
+            mat-raised-button
+            color="primary"
+            [routerLink]="['details', user.id]"
+            class="full-width-button"
+          >
+            Detalhes
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </ng-container>
+</main>

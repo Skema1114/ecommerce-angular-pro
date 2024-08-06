@@ -1,0 +1,94 @@
+.user-details {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  background-color: #121212;
+
+  &__card {
+    width: 100%;
+    max-width: 800px;
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    position: relative;
+    padding: 20px;
+  }
+
+  &__back-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #1e88e5;
+    color: #ffffff;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    padding-bottom: 20px;
+  }
+
+  &__header-content {
+    display: flex;
+    align-items: center;
+  }
+
+  &__avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 20px;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__name {
+    margin: 0;
+    color: #ffffff;
+  }
+
+  &__email {
+    margin: 0;
+    color: #b0b0b0;
+  }
+
+  &__content {
+    padding: 0 10px;
+  }
+
+  &__info-item {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    padding: 10px 0;
+  }
+
+  &__icon {
+    color: #ffffff;
+    margin-right: 10px;
+    width: 3%;
+  }
+
+  &__text {
+    margin-left: 10px;
+    width: 97%;
+
+    h4 {
+      margin: 0;
+      color: #ffffff;
+    }
+
+    p {
+      margin: 0;
+      color: #b0b0b0;
+    }
+  }
+}

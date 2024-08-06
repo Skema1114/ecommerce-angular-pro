@@ -1,9 +1,42 @@
-.right-content {
+$primary-color: #673ab7;
+$accent-color: #3f51b5;
+
+mat-toolbar {
+  background-color: $primary-color;
+  color: white;
+  height: 55px;
+  padding: 20px;
   display: flex;
   align-items: center;
-  gap: 1rem;
-}
 
-.login {
-  color: #fff;
+  .title {
+    flex: 1;
+    font-weight: bold;
+    font-size: 24px;
+  }
+
+  .right-content {
+    display: flex;
+    align-items: center;
+
+    a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      display: flex;
+      align-items: center;
+      transition: color 0.3s ease, background-color 0.3s ease;
+      position: relative;
+
+      mat-icon {
+        margin-right: 8px;
+      }
+
+      &:hover {
+        color: $accent-color;
+        background-color: rgba($primary-color, 0.1);
+        border-radius: 4px;
+      }
+    }
+  }
 }
