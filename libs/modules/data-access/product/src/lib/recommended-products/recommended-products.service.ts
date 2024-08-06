@@ -15,7 +15,7 @@ export class RecommendedProductsService {
     return this.http.get<Product[]>(`${this.apiUrl}/products`, {
       params: {
         page: 1,
-        limit: 6,
+        limit: 27,
       },
     });
   }
