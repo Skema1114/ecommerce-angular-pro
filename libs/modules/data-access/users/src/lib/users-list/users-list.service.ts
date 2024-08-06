@@ -16,4 +16,8 @@ export class UsersListService {
   listUsers(): Observable<User[]> {
     return this.http.get<User[]>(`${this.apiUrl}/users/`);
   }
+
+  getById(id: string): Observable<User> {
+    return this.http.get<User>(`${this.apiUrl}/users/${id}`);
+  }
 }
