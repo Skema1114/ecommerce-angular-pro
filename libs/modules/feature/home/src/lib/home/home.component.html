@@ -1,9 +1,10 @@
 <main class="home">
-  <section>
-    <h2>Produtos recomendados para você:</h2>
+  <section class="home__section">
+    <h2 class="home__title">Produtos recomendados para você:</h2>
 
-    <div class="product-card-container">
+    <div class="home__product-card-container">
       @for (product of products$ | async; track product.id) {
+
       <ecommerce-angular-pro-product-card
         [product]="product"
         ecommerceAngularProLog
