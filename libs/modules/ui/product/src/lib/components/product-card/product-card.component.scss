@@ -41,4 +41,11 @@
     font-size: 16px;
     color: #ffab00;
   }
+
+  &__spinner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
 }

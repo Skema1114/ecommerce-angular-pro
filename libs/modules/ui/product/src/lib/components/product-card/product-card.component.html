@@ -3,8 +3,14 @@
     mat-card-image
     [src]="product.image"
     [alt]="product.description"
+    (load)="onImageLoad()"
     class="product-card__image"
   />
+
+  <div class="product-card__spinner" *ngIf="isLoading">
+    <mat-spinner diameter="50"></mat-spinner>
+  </div>
+
   <mat-card-content class="product-card__content">
     <mat-card-title class="product-card__title">{{
       product.name
