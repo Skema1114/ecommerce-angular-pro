@@ -1,0 +1,16 @@
+<mat-toolbar color="primary">
+  <a routerLink="/" class="title">
+    <img src="./assets/logo.png" alt="Logo do sistema" />
+  </a>
+
+  <ecommerce-angular-pro-product-search></ecommerce-angular-pro-product-search>
+
+  <div class="right-content">
+    <a mat-button routerLink="/admin"> <mat-icon>people</mat-icon> Usuários </a>
+    <a mat-button routerLink="/auth"> <mat-icon>login</mat-icon> Login </a>
+    <ecommerce-angular-pro-cart
+      [quantity]="(quantity$ | async) ?? 0"
+    ></ecommerce-angular-pro-cart>
+  </div>
+</mat-toolbar>
+<router-outlet></router-outlet>

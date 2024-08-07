@@ -1,0 +1,19 @@
+<main class="home">
+  <section class="home__section">
+    <h2 class="home__title">Produtos recomendados para você:</h2>
+
+    <div class="home__product-card-container">
+      @for (product of products$ | async; track product.id) {
+
+      <ecommerce-angular-pro-product-card
+        [product]="product"
+        ecommerceAngularProLog
+      >
+      </ecommerce-angular-pro-product-card>
+
+      } @empty {
+      <strong>Não temos produtos recomendados para você por enquanto.</strong>
+      }
+    </div>
+  </section>
+</main>

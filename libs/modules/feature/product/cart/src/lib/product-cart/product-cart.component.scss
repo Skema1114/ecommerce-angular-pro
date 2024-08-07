@@ -1,0 +1,53 @@
+.product-cart {
+  background-color: #121212;
+  height: 94vh;
+  padding: 30px 30px 0 30px;
+  margin: 10px 200px;
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    color: white;
+  }
+
+  &__div-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    row-gap: 40px;
+    padding-top: 30px;
+  }
+
+  &__empty {
+    font-size: 16px;
+    color: bisque;
+    font-weight: 200;
+    padding: 8px;
+  }
+
+  &__footer {
+    text-align: right;
+    color: white;
+  }
+
+  &__total {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffab00;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    align-self: center;
+  }
+}
+
+.mat-mdc-card-content {
+  padding: 0;
+}

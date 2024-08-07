@@ -1,0 +1,54 @@
+mat-toolbar {
+  background-color: #673ab7;
+  color: white;
+  height: 90px;
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+
+  .title {
+    flex: 1;
+    font-weight: 'regular';
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+
+    &:hover {
+      color: lightgray;
+      background-color: rgba(#673ab7, 0.1);
+      border-radius: 4px;
+    }
+
+    img {
+      width: 180px;
+      height: 35px;
+    }
+  }
+
+  .right-content {
+    display: flex;
+    align-items: center;
+
+    a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      display: flex;
+      align-items: center;
+      transition: color 0.3s ease, background-color 0.3s ease;
+      position: relative;
+
+      mat-icon {
+        margin-right: 8px;
+      }
+
+      &:hover {
+        color: lightgray;
+        background-color: rgba(#673ab7, 0.1);
+        border-radius: 4px;
+      }
+    }
+  }
+}

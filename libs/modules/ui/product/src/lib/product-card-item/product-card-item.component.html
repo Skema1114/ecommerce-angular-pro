@@ -1,0 +1,26 @@
+<div class="cart-item">
+  <img
+    src="{{ data.image }}"
+    attr.alt="Imagem do produto {{ data.name }}"
+    class="cart-item__image"
+  />
+
+  <div class="cart-item__details">
+    <h3 class="cart-item__name">{{ data.name }}</h3>
+
+    <p class="cart-item__price">Preço: {{ data.price | currency }}</p>
+
+    <p class="cart-item__description">{{ data.description }}</p>
+
+    <button
+      mat-raised-button
+      color="accent"
+      routerLinkActive="router-link-active"
+      class="cart-item__remove"
+      aria-label="Botão de remover o produto"
+      (click)="onRemoveProduct()"
+    >
+      Remover
+    </button>
+  </div>
+</div>

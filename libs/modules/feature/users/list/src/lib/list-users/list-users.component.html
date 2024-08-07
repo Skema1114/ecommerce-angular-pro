@@ -1,0 +1,12 @@
+<main class="dark-theme">
+  <ng-container *ngIf="users$ | async as users">
+    <div class="user-list">
+      @for (user of users; track user.id) {
+      <ecommerce-angular-pro-users-list-item
+        class="user-list__component"
+        [data]="user"
+      ></ecommerce-angular-pro-users-list-item>
+      }
+    </div>
+  </ng-container>
+</main>

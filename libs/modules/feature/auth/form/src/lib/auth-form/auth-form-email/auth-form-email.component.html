@@ -1,0 +1,44 @@
+<mat-form-field appearance="outline" class="form-field">
+  <mat-label>Informe seu email</mat-label>
+
+  <input
+    [formControl]="control"
+    autofocus
+    matInput
+    placeholder="user@gmail.com"
+    type="email"
+    aria-label="Digite o seu email"
+  />
+
+  @if (control.hasError('email') && !control.hasError('required')) {
+  <mat-error data-testid="error-email">Informe um email válido</mat-error>
+
+  } @else if (control.hasError('required')) {
+  <mat-error data-testid="error-required"
+    >O email é <strong>obrigatório</strong></mat-error
+  >
+  }
+</mat-form-field>
+
+<div class="form-field__container">
+  <button
+    mat-flat-button
+    color="accent"
+    [routerLink]="['/']"
+    class="form-field__button"
+    aria-label="Botão de sair para listagem de produtos"
+  >
+    Sair
+  </button>
+
+  <button
+    [disabled]="control.invalid"
+    mat-flat-button
+    color="primary"
+    [routerLink]="['../', 'password']"
+    class="form-field__button"
+    aria-label="Botão de avançar para o formulário de senha"
+  >
+    Avançar
+  </button>
+</div>

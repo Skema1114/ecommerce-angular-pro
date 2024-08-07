@@ -1,0 +1,20 @@
+.home {
+  &__section {
+    padding: 20px;
+    background-color: #121212;
+    color: #ffffff;
+    margin: 20px 200px;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #ffffff;
+  }
+
+  &__product-card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+  }
+}
