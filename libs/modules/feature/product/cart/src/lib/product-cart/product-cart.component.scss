@@ -2,6 +2,7 @@
   background-color: #121212;
   height: 94vh;
   padding: 30px;
+  margin: 50px 120px;
 
   &__grid {
     display: grid;
@@ -9,4 +10,11 @@
     gap: 20px;
     padding-top: 30px;
   }
+}
+
+.product-cart-empty {
+  font-size: 16px;
+  color: bisque;
+  font-weight: 200;
+  padding: 8px;
 }
