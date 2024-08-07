@@ -8,6 +8,7 @@
     [formControl]="control"
     [matAutocomplete]="auto"
   />
+
   <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
     @for (product of products$ | async; track product.id) {
 

@@ -4,15 +4,20 @@
       <div class="product-detail__image">
         <img [src]="product.image" [alt]="product.description" />
       </div>
+
       <div class="product-detail__info">
         <h1 class="product-detail__title">{{ product.name }}</h1>
+
         <p class="product-detail__description">{{ product.description }}</p>
+
         <p class="product-detail__price">
           {{ product.price | currency : 'BRL' }}
         </p>
+
         <p class="product-detail__quantity">
           {{ product.quantity | quantityDescription }}
         </p>
+
         <div class="product-detail__actions">
           <button
             mat-raised-button
@@ -20,14 +25,17 @@
             [routerLink]="['/']"
             routerLinkActive="router-link-active"
             class="product-detail__button"
+            aria-label="Botão de voltar a lista de produtos"
           >
             Voltar
           </button>
+
           <button
             mat-raised-button
             color="primary"
             (click)="cartService.addToCart(product)"
             class="product-detail__button"
+            aria-label="Botão de adicionar produto ao carrinho"
           >
             Adicionar ao carrinho
           </button>

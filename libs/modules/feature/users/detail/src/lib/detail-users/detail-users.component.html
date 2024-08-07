@@ -6,6 +6,7 @@
         mat-raised-button
         color="accent"
         routerLink="/admin"
+        aria-label="Botão de voltar a lista de usuários"
       >
         Voltar
       </button>
@@ -13,10 +14,15 @@
       <mat-card-header class="user-details__header">
         <div class="user-details__header-content">
           <div class="user-details__avatar">
-            <img [src]="user.avatar" alt="Imagem do usuário" />
+            <img
+              [src]="user.avatar"
+              attr.alt="Avatar do usuário {{ user.name }}"
+            />
           </div>
+
           <div class="user-details__info">
             <h1 class="user-details__name">{{ user.name }}</h1>
+
             <h3 class="user-details__email">{{ user.email }}</h3>
           </div>
         </div>
@@ -25,16 +31,20 @@
       <mat-card-content class="user-details__content">
         <div class="user-details__info-item">
           <mat-icon class="user-details__icon">info</mat-icon>
+
           <div class="user-details__text">
             <h4>Biografia</h4>
+
             <p>{{ user.biography }}</p>
           </div>
         </div>
 
         <div class="user-details__info-item">
           <mat-icon class="user-details__icon">calendar_today</mat-icon>
+
           <div class="user-details__text">
             <h4>Criado em</h4>
+
             <p>{{ user.createdAt | date : 'dd/MM/yyyy' }}</p>
           </div>
         </div>

@@ -1,5 +1,7 @@
 <mat-card class="product-cart">
-  <mat-card-title style="color: white">Carrinho de Compras</mat-card-title>
+  <mat-card-title class="product-cart__title"
+    >Carrinho de Compras</mat-card-title
+  >
 
   @if (cart().length >0) {
   <mat-card-content>
@@ -11,9 +13,10 @@
       }
     </div>
   </mat-card-content>
+
   } @else {
   <mat-card-content>
-    <p class="product-cart-empty">
+    <p class="product-cart__empty">
       Ops! Parece que nenhum item foi adicionado ao carrinho
     </p>
   </mat-card-content>
