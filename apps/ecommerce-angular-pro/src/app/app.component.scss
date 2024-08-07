@@ -1,8 +1,5 @@
-$primary-color: #673ab7;
-$accent-color: #3f51b5;
-
 mat-toolbar {
-  background-color: $primary-color;
+  background-color: #673ab7;
   color: white;
   height: 90px;
   padding: 40px;
@@ -20,8 +17,13 @@ mat-toolbar {
 
     &:hover {
       color: lightgray;
-      background-color: rgba($primary-color, 0.1);
+      background-color: rgba(#673ab7, 0.1);
       border-radius: 4px;
+    }
+
+    img {
+      width: 180px;
+      height: 35px;
     }
   }
 
@@ -44,7 +46,7 @@ mat-toolbar {
 
       &:hover {
         color: lightgray;
-        background-color: rgba($primary-color, 0.1);
+        background-color: rgba(#673ab7, 0.1);
         border-radius: 4px;
       }
     }
