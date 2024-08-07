@@ -1,16 +1,14 @@
-import { computed, Injectable, signal } from '@angular/core';
+import { Injectable } from '@angular/core';
+import { BehaviorSubject, map } from 'rxjs';
 import { Product } from '../../models/product.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CartService {
-  // FORMA COM OBSERVABLES
-  // private cartSubject$ = new BehaviorSubject<Product[]>([]);
-  // cart$ = this.cartSubject$.asObservable();
-  // quantity$ = this.cart$.pipe(
-  //   map(products => products.length)
-  // );
+  private cartSubject$ = new BehaviorSubject<Product[]>([]);
+  cart$ = this.cartSubject$.asObservable();
+  quantity$ = this.cart$.pipe(map((products) => products.length));
 
   // addToCart(product: Product) {
   //   const currentCart = this.cartSubject$.getValue();
@@ -18,11 +16,21 @@ export class CartService {
   // }
 
   // FORMA COM SIGNALS
-  private cartSignal = signal<Product[]>([]);
-  cart = this.cartSignal.asReadonly();
-  quantity = computed(() => this.cart().length);
+  // private cartSignal = signal<Product[]>([]);
+  // cart = this.cartSignal.asReadonly();
+  // quantity = computed(() => this.cart().length);
 
   addToCart(product: Product): void {
-    this.cartSignal.update((products) => [...products, product]);
+    this.cartSubject$.next([...this.cartSubject$.getValue(), product]);
+  }
+
+  removeFromCart(product: Product): void {
+    const currentCart = this.cartSubject$.getValue();
+    const index = currentCart.findIndex((p) => p.id === product.id);
+    if (index !== -1) {
+      const updatedCart = [...currentCart];
+      updatedCart.splice(index, 1);
+      this.cartSubject$.next(updatedCart);
+    }
   }
 }

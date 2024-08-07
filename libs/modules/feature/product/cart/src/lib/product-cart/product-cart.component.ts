@@ -1,5 +1,5 @@
 import { CommonModule, CurrencyPipe } from '@angular/common';
-import { Component, inject, Signal } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
@@ -9,6 +9,7 @@ import {
   Product,
 } from '@ecommerce-angular-pro/product-data-access';
 import { ProductCardItemComponent } from '@ecommerce-angular-pro/product-ui';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'ecommerce-angular-pro-product-cart',
@@ -26,7 +27,13 @@ import { ProductCardItemComponent } from '@ecommerce-angular-pro/product-ui';
   styleUrl: './product-cart.component.scss',
 })
 export class ProductCartComponent {
-  cart: Signal<Product[]> = inject(CartService).cart;
+  private cartService: CartService = inject(CartService);
+
+  cart$: Observable<Product[]> = this.cartService.cart$;
+
+  onRemoveProduct(product: Product): void {
+    this.cartService.removeFromCart(product);
+  }
 }
 
 export interface CartItem {

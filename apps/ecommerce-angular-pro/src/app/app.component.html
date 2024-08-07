@@ -9,7 +9,7 @@
     <a mat-button routerLink="/admin"> <mat-icon>people</mat-icon> Usuários </a>
     <a mat-button routerLink="/auth"> <mat-icon>login</mat-icon> Login </a>
     <ecommerce-angular-pro-cart
-      [quantity]="quantity()"
+      [quantity]="(quantity$ | async) ?? 0"
     ></ecommerce-angular-pro-cart>
   </div>
 </mat-toolbar>

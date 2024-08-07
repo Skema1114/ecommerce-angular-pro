@@ -11,5 +11,16 @@
     <p class="cart-item__price">Preço: {{ data.price | currency }}</p>
 
     <p class="cart-item__description">{{ data.description }}</p>
+
+    <button
+      mat-raised-button
+      color="accent"
+      routerLinkActive="router-link-active"
+      class="product-detail__button"
+      aria-label="Botão de voltar a lista de produtos"
+      (click)="onRemoveProduct()"
+    >
+      Remover
+    </button>
   </div>
 </div>
