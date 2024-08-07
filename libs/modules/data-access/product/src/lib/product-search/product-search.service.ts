@@ -14,6 +14,11 @@ export class ProductSearchService {
 
   constructor() {}
 
+  /**
+   * @description Busca produtos pelo nome
+   * @param name Nome do produto
+   * @returns {Product[]} Lista de produtos
+   */
   searchByName(name: string): Observable<Product[]> {
     return this.http.get<Product[]>(`${this.apiUrl}/products`, {
       params: {
@@ -22,6 +27,11 @@ export class ProductSearchService {
     });
   }
 
+  /**
+   * @description Busca produto pelo id
+   * @param id Id do produto
+   * @returns {Product} Produto
+   */
   getById(id: string): Observable<Product> {
     return this.http.get<Product>(`${this.apiUrl}/products/${id}`);
   }

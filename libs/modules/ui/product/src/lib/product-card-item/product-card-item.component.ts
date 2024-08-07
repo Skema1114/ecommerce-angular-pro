@@ -14,6 +14,9 @@ export class ProductCardItemComponent {
   @Input() data!: Product;
   @Output() removeProduct = new EventEmitter<Product>();
 
+  /**
+   * @description Emite o evento de remoção do produto
+   */
   onRemoveProduct(): void {
     this.removeProduct.emit(this.data);
   }

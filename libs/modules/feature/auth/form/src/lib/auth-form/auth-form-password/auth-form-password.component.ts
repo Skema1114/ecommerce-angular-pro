@@ -26,6 +26,9 @@ export class AuthFormPasswordComponent {
   authService = inject(AuthService);
   router = inject(Router);
 
+  /**
+   * @description Realiza o login do usuário e navega para a home
+   */
   login(): void {
     this.authService.setEmail(this.emailValue);
     this.router.navigate(['/']);

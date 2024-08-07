@@ -11,6 +11,10 @@ export class RecommendedProductsService {
 
   constructor(private http: HttpClient) {}
 
+  /**
+   * @description Busca OS produtos
+   * @returns {Product[]} Lista de produtos
+   */
   getProducts(): Observable<Product[]> {
     return this.http.get<Product[]>(`${this.apiUrl}/products`, {
       params: {

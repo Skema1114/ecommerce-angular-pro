@@ -15,10 +15,18 @@ export class CartService {
     )
   );
 
+  /**
+   * @description Adiciona produto ao carrinho
+   * @param product Produto a ser adicionado
+   */
   addToCart(product: Product): void {
     this.cartSubject$.next([...this.cartSubject$.getValue(), product]);
   }
 
+  /**
+   * @description Remove produto do carrinho
+   * @param product Produto a ser removido
+   */
   removeFromCart(product: Product): void {
     const currentCart = this.cartSubject$.getValue();
     const index = currentCart.findIndex((p) => p.id === product.id);

@@ -32,17 +32,11 @@ export class ProductCartComponent {
   cart$: Observable<Product[]> = this.cartService.cart$;
   generalPrice$: Observable<number> = this.cartService.generalPrice$;
 
+  /**
+   * @description Remove o produto do carrinho de compras
+   * @param {Product} product Produto a ser removido
+   */
   onRemoveProduct(product: Product): void {
     this.cartService.removeFromCart(product);
   }
-}
-
-export interface CartItem {
-  createdAt: string;
-  name: string;
-  price: string;
-  description: string;
-  image: string;
-  quantity: number;
-  id: string;
 }

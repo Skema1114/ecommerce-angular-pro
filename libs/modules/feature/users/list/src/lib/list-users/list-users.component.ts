@@ -26,7 +26,7 @@ import { UsersListItemComponent } from '@ecommerce-angular-pro/users-list-item';
   styleUrl: './list-users.component.scss',
 })
 export class ListUsersComponent {
-  userService = inject(UsersListService);
+  private userService = inject(UsersListService);
 
   users$ = this.userService.listUsers();
   displayedColumns: string[] = [
