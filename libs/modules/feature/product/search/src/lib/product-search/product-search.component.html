@@ -1,23 +1,19 @@
 <form class="search-form">
-  <mat-form-field class="full-width">
-    <input
-      type="text"
-      placeholder="Buscar produtos"
-      aria-label="Digite o produto que você deseja buscar"
-      matInput
-      [formControl]="control"
-      [matAutocomplete]="auto"
-    />
-    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
-      @for (product of products$ | async; track product.id) {
+  <input
+    type="text"
+    class="input-search"
+    placeholder="Buscar produtos"
+    aria-label="Digite o produto que você deseja buscar"
+    matInput
+    [formControl]="control"
+    [matAutocomplete]="auto"
+  />
+  <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+    @for (product of products$ | async; track product.id) {
 
-      <mat-option
-        [routerLink]="['/product', product.id]"
-        [value]="product.name"
-      >
-        {{ product.name }}
-      </mat-option>
-      }
-    </mat-autocomplete>
-  </mat-form-field>
+    <mat-option [routerLink]="['/product', product.id]" [value]="product.name">
+      {{ product.name }}
+    </mat-option>
+    }
+  </mat-autocomplete>
 </form>
