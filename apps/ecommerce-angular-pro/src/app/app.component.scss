@@ -4,15 +4,17 @@ $accent-color: #3f51b5;
 mat-toolbar {
   background-color: $primary-color;
   color: white;
-  height: 55px;
-  padding: 20px;
+  height: 90px;
+  padding: 40px;
   display: flex;
   align-items: center;
+  flex-direction: row;
+  justify-content: center;
 
   .title {
     flex: 1;
-    font-weight: bold;
-    font-size: 24px;
+    font-weight: 'regular';
+    font-size: 30px;
   }
 
   .right-content {
