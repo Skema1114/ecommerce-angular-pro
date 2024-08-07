@@ -16,10 +16,28 @@
   }
 </mat-form-field>
 
-<div class="container">
+<div
+  class="container"
+  style="
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+    gap: 15px;
+  "
+>
   <button
+    mat-flat-button
+    color="accent"
+    [routerLink]="['/']"
+    style="width: 100%"
+  >
+    Sair
+  </button>
+
+  <button
+    style="width: 100%"
     [disabled]="control.invalid"
-    mat-button
+    mat-flat-button
     color="primary"
     [routerLink]="['../', 'password']"
   >
