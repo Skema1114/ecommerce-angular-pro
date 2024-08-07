@@ -1,5 +1,7 @@
 <mat-card class="product-cart">
   <mat-card-title style="color: white">Carrinho de Compras</mat-card-title>
+
+  @if (cart().length >0) {
   <mat-card-content>
     <div class="product-cart__grid">
       @for (item of cart(); track item.id) {
@@ -9,4 +11,11 @@
       }
     </div>
   </mat-card-content>
+  } @else {
+  <mat-card-content>
+    <p class="product-cart-empty">
+      Ops! Parece que nenhum item foi adicionado ao carrinho
+    </p>
+  </mat-card-content>
+  }
 </mat-card>
