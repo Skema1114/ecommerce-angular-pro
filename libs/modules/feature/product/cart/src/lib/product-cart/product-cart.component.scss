@@ -3,9 +3,17 @@
   height: 94vh;
   padding: 30px 30px 0 30px;
   margin: 10px 200px;
+  display: flex;
+  flex-direction: column;
 
   &__title {
     color: white;
+  }
+
+  &__div-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 
   &__grid {
@@ -21,6 +29,22 @@
     color: bisque;
     font-weight: 200;
     padding: 8px;
+  }
+
+  &__footer {
+    text-align: right;
+    color: white;
+  }
+
+  &__total {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffab00;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    align-self: center;
   }
 }
 
