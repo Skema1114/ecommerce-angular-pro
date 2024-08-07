@@ -30,6 +30,7 @@ export class ProductCartComponent {
   private cartService: CartService = inject(CartService);
 
   cart$: Observable<Product[]> = this.cartService.cart$;
+  generalPrice$: Observable<number> = this.cartService.generalPrice$;
 
   onRemoveProduct(product: Product): void {
     this.cartService.removeFromCart(product);

@@ -9,16 +9,11 @@ export class CartService {
   private cartSubject$ = new BehaviorSubject<Product[]>([]);
   cart$ = this.cartSubject$.asObservable();
   quantity$ = this.cart$.pipe(map((products) => products.length));
-
-  // addToCart(product: Product) {
-  //   const currentCart = this.cartSubject$.getValue();
-  //   this.cartSubject$.next([...currentCart, product]);
-  // }
-
-  // FORMA COM SIGNALS
-  // private cartSignal = signal<Product[]>([]);
-  // cart = this.cartSignal.asReadonly();
-  // quantity = computed(() => this.cart().length);
+  generalPrice$ = this.cart$.pipe(
+    map((products) =>
+      products.reduce((acc, product) => acc + parseFloat(product.price), 0)
+    )
+  );
 
   addToCart(product: Product): void {
     this.cartSubject$.next([...this.cartSubject$.getValue(), product]);
@@ -33,4 +28,14 @@ export class CartService {
       this.cartSubject$.next(updatedCart);
     }
   }
+
+  // FORMA COM SIGNALS
+  // private cartSignal = signal<Product[]>([]);
+  // cart = this.cartSignal.asReadonly();
+  // quantity = computed(() => this.cart().length);
+  //
+  // addToCart(product: Product) {
+  //   const currentCart = this.cartSubject$.getValue();
+  //   this.cartSubject$.next([...currentCart, product]);
+  // }
 }

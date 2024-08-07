@@ -1,7 +1,15 @@
 <mat-card class="product-cart">
-  <mat-card-title class="product-cart__title"
-    >Carrinho de Compras</mat-card-title
-  >
+  <div class="product-cart__div-title">
+    <mat-card-title class="product-cart__title"
+      >Carrinho de Compras</mat-card-title
+    >
+
+    <mat-card-footer class="product-cart__footer">
+      <p class="product-cart__total">
+        Total: {{ generalPrice$ | async | currency : 'BRL' }}
+      </p>
+    </mat-card-footer>
+  </div>
 
   @if ((cart$ | async)!.length > 0) {
   <mat-card-content>
