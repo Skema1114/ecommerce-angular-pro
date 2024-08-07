@@ -3,12 +3,13 @@
     >Carrinho de Compras</mat-card-title
   >
 
-  @if (cart().length >0) {
+  @if ((cart$ | async)!.length > 0) {
   <mat-card-content>
     <div class="product-cart__grid">
-      @for (item of cart(); track item.id) {
+      @for (item of cart$ | async; track item.id) {
       <ecommerce-angular-pro-product-card-item
         [data]="item"
+        (removeProduct)="onRemoveProduct($event)"
       ></ecommerce-angular-pro-product-card-item>
       }
     </div>

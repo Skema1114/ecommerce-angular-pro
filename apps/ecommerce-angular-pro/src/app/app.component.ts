@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
@@ -11,6 +12,7 @@ import { CartComponent } from '@ecommerce-angular-pro/product-ui';
 @Component({
   standalone: true,
   imports: [
+    CommonModule,
     RouterModule,
     LayoutModule,
     ProductSearchComponent,
@@ -24,5 +26,6 @@ import { CartComponent } from '@ecommerce-angular-pro/product-ui';
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  quantity = inject(CartService).quantity;
+  private cartService: CartService = inject(CartService);
+  quantity$ = this.cartService.quantity$;
 }
