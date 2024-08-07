@@ -1,0 +1,26 @@
+<mat-card class="user-card">
+  <mat-card-header class="user-card__header">
+    <div class="user-card__avatar">
+      <img [src]="data.avatar" alt="imagem do usuário" />
+    </div>
+    <div>
+      <mat-card-title class="user-card__title">{{ data.name }}</mat-card-title>
+      <mat-card-subtitle class="user-card__subtitle">{{
+        data.email
+      }}</mat-card-subtitle>
+    </div>
+  </mat-card-header>
+  <mat-card-content class="user-card__content">
+    <p>{{ data.biography }}</p>
+  </mat-card-content>
+  <mat-card-actions class="user-card__actions">
+    <button
+      mat-raised-button
+      color="primary"
+      [routerLink]="['details', data.id]"
+      class="full-width-button"
+    >
+      Detalhes
+    </button>
+  </mat-card-actions>
+</mat-card>

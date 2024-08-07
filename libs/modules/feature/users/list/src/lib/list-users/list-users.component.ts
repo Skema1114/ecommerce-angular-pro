@@ -7,6 +7,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
 import { RouterModule } from '@angular/router';
 import { UsersListService } from '@ecommerce-admin/users-data-access';
+import { UsersListItemComponent } from '@ecommerce-angular-pro/users-list-item';
 
 @Component({
   selector: 'ecommerce-angular-pro-list-users',
@@ -19,6 +20,7 @@ import { UsersListService } from '@ecommerce-admin/users-data-access';
     MatCardModule,
     MatIconModule,
     MatDividerModule,
+    UsersListItemComponent,
   ],
   templateUrl: './list-users.component.html',
   styleUrl: './list-users.component.scss',

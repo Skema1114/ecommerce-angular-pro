@@ -19,6 +19,13 @@ export const appRoutes: Route[] = [
       ),
   },
   {
+    path: 'cart',
+    loadChildren: () =>
+      import('@ecommerce-angular-pro/product-cart').then(
+        (c) => c.productCartRoutes
+      ),
+  },
+  {
     path: 'auth',
     loadChildren: () =>
       import('@ecommerce-angular-pro/auth-form').then((c) => c.authFormRoutes),

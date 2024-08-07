@@ -15,6 +15,15 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@ecommerce-admin/users-data-access": [
+        "libs/modules/data-access/users/src/index.ts"
+      ],
+      "@ecommerce-admin/users-details": [
+        "libs/modules/feature/users/detail/src/index.ts"
+      ],
+      "@ecommerce-admin/users-list": [
+        "libs/modules/feature/users/list/src/index.ts"
+      ],
       "@ecommerce-angular-pro/auth-data-access": [
         "libs/modules/data-access/auth/src/index.ts"
       ],
@@ -31,6 +40,9 @@
       "@ecommerce-angular-pro/list-users": [
         "libs/modules/feature/users/list/src/index.ts"
       ],
+      "@ecommerce-angular-pro/product-cart": [
+        "libs/modules/feature/product/cart/src/index.ts"
+      ],
       "@ecommerce-angular-pro/product-data-access": [
         "libs/modules/data-access/product/src/index.ts"
       ],
@@ -43,14 +55,8 @@
       "@ecommerce-angular-pro/product-ui": [
         "libs/modules/ui/product/src/index.ts"
       ],
-      "@ecommerce-admin/users-data-access": [
-        "libs/modules/data-access/users/src/index.ts"
-      ],
-      "@ecommerce-admin/users-list": [
-        "libs/modules/feature/users/list/src/index.ts"
-      ],
-      "@ecommerce-admin/users-details": [
-        "libs/modules/feature/users/detail/src/index.ts"
+      "@ecommerce-angular-pro/users-list-item": [
+        "libs/modules/ui/users/src/index.ts"
       ]
     }
   },

@@ -14,7 +14,15 @@ mat-toolbar {
   .title {
     flex: 1;
     font-weight: 'regular';
-    font-size: 30px;
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+
+    &:hover {
+      color: lightgray;
+      background-color: rgba($primary-color, 0.1);
+      border-radius: 4px;
+    }
   }
 
   .right-content {
@@ -35,7 +43,7 @@ mat-toolbar {
       }
 
       &:hover {
-        color: $accent-color;
+        color: lightgray;
         background-color: rgba($primary-color, 0.1);
         border-radius: 4px;
       }
