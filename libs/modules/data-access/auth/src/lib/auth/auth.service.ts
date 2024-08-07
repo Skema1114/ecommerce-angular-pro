@@ -8,6 +8,10 @@ export class AuthService {
   private emailSubject = new BehaviorSubject<string | null>(null);
   email$ = this.emailSubject.asObservable();
 
+  /**
+   * @description Emite o valor do email
+   * @param email Email informado
+   */
   setEmail(email: string): void {
     this.emailSubject.next(email);
   }

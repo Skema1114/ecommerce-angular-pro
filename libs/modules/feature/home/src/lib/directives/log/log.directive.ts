@@ -23,11 +23,17 @@ export class LogDirective implements OnInit {
   elementRef = inject(ElementRef);
   renderer = inject(Renderer2);
 
+  /**
+   * @description Navega para a página de detalhes do produto
+   */
   @HostListener('click', ['$event'])
   onClick(): void {
     this.router.navigate(['product', this.productCardComponent.product.id]);
   }
 
+  /**
+   * @description Emite um evento de clique duplo
+   */
   @HostListener('dblclick', ['$event'])
   onDoubleClick(): void {
     this.doubleClick.emit();

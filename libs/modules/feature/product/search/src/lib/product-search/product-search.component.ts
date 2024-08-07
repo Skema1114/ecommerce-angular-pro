@@ -39,7 +39,6 @@ export class ProductSearchComponent implements OnInit {
 
   ngOnInit() {
     this.products$ = this.control.valueChanges.pipe(
-      // BORA UTILIZAR OS OPERADORES
       debounceTime(500),
       distinctUntilChanged(),
       filter((text) => text.length > 0),

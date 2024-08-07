@@ -13,10 +13,19 @@ export class UsersListService {
 
   constructor() {}
 
+  /**
+   * @description Lista os usuários
+   * @returns {User[]} Lista de usuários
+   */
   listUsers(): Observable<User[]> {
     return this.http.get<User[]>(`${this.apiUrl}/users/`);
   }
 
+  /**
+   * @description Busca usuário pelo id
+   * @param id Id do usuário
+   * @returns {User} Usuário
+   */
   getById(id: string): Observable<User> {
     return this.http.get<User>(`${this.apiUrl}/users/${id}`);
   }

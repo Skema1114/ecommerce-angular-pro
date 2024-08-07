@@ -45,6 +45,10 @@ export class ProductDetailComponent {
     });
   }
 
+  /**
+   * @description Adiciona o produto ao carrinho de compras
+   * @param {Product} product Produto a ser adicionado
+   */
   addToCart(product: Product): void {
     this.cart.update((value) => [...value, product]);
     // this.count.update((value) => value + 1);
